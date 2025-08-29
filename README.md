@@ -1,44 +1,57 @@
-📚 Web Book API — Docker Build & Deployment
+📚 Web Book API — Cloud-Native Docker Deployment
 
-🚀 Docker Build & Deployment Overview
-🛠️ Build Process
 
-Base Image: python:3.12-alpine 🐍
 
-Build Time: 2.8 seconds ⏱️
+🛠️ Build Pipeline
 
-Cache Used:
+Base Runtime: python:3.12-alpine 🐍 — lightweight & efficient
 
-Set WORKDIR 📂
+Build Time: 2.8 seconds ⏱️ — rapid iteration
 
-Copy requirements.txt 📄
+Layer Cache: Maximized for fast rebuilds
 
-pip install dependencies 📦
+Setup workspace /app 📂
 
-Copy app.py 📝
+Dependency install via requirements.txt 📄 → 📦
 
-📦 Image Details
+App code (app.py) sync 📝
 
-Image Name: book-api-web 🏷️
 
-Image ID: sha256:d53248… 🔑
 
-🐳 Containers Started
-Service	Status	Icon	Notes
-Redis	✅	🛢️	Data storage
-Postgres DB	✅	🐘	Persistent database
-Web App	✅	🐍	Python application
-Nginx Proxy	✅	🌐	Reverse proxy & routing
-🔗 Network & Storage
+🐳 Containerized Services
 
-Network: book-api_nginx-net 🌉
+Redis	Distributed cache & pub/sub	✅	🛢️
 
-Volumes:
+PostgreSQL	Cloud-grade persistent store	✅	🐘
+
+Web API	Stateless Python backend	✅	🐍
+
+Nginx Proxy	Edge gateway & load balancer	✅	🌐
+
+
+
+🔗 Virtual Network & Persistent Storage
+
+Isolated Docker network: book-api_nginx-net 🔒🌉
+
+Persistent volumes for data durability:
 
 redis-data 💾
 
 pgdata 💾
 
-⚡ Startup Time
 
-~1.2 seconds from container creation to running 🕒
+
+⚡ Deployment Metrics
+
+Instant readiness: Containers online in ~1.2s 🚀
+
+Immutable infrastructure: Fast rebuilds via cached layers 🔄
+
+🔮 Next Steps (optional slide)
+
+Integrate CI/CD pipelines 🔧
+
+Auto-scaling container orchestration with Kubernetes ☸️
+
+API monitoring & alerting 📊
